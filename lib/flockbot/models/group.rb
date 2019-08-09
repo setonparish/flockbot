@@ -11,16 +11,17 @@ module Flockbot
         @id = json["groupID"]
         @name = json["groupName"]
         @short_name = json["groupShortname"]
+        @everyone = everyone?
       end
 
       def subscriber_count
         json = connection.get("group/#{id}/getSubscriberCount")
         count = json["subscriberCount"]
-        Integer(count) rescue nil
+        @subscriber_count = Integer(count) rescue nil
       end
 
       def everyone?
-        @short_name == "everyone"
+        @everyone = (@short_name == "everyone")
       end
 
       def add_user(first_name:, last_name:, email: nil, mobile_phone: nil)
@@ -30,7 +31,11 @@ module Flockbot
       end
 
       def inspect
-        "#<#{self.class.name} id=#{id} name=#{name}>"
+        "#<#{self.class.name} #{to_json}>"
+      end
+
+      def to_json
+        { id: @id, name: @name, short_name: @short_name, everyone?: @everyone, subscriber_count: @subscriber_count}
       end
     end
   end

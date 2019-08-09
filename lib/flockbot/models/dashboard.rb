@@ -18,7 +18,11 @@ module Flockbot
       end
 
       def inspect
-        "#<#{self.class.name} @network_id=\"#{@network_id}\", @everyone_group_id=\"#{@everyone_group_id}\">"
+        "#<#{self.class.name} #{to_json}>"
+      end
+
+      def to_json
+        { network_id: @network_id, everyone_group_id: @everyone_group_id }
       end
     end
   end

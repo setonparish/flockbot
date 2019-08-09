@@ -73,14 +73,13 @@ client = Flockbot::Client.new(subdomain: "myparish", email: "me@example.com", pa
 
 # List all of your groups
 client.groups
-#=> [#<Flockbot::Models::Group id=971110 name=Everyone>,
-#    #<Flockbot::Models::Group id=981068 name=RCIA>,
-#    #<Flockbot::Models::Group id=992537 name=Alpha>,
-#    #<Flockbot::Models::Group id=928649 name=Lectors]
+=> [#<Flockbot::Models::Group {:id=>971110, :name=>"Everyone", :short_name=>"everyone", :everyone?=>true, :subscriber_count=>nil}>,
+ #<Flockbot::Models::Group {:id=>977777, :name=>"Lectors", :short_name=>"LectorsGroup", :everyone?=>false, :subscriber_count=>nil}>,
+ #<Flockbot::Models::Group {:id=>876666, :name=>"Alpha", :short_name=>"Alpha", :everyone?=>false, :subscriber_count=>nil}>]
 
 # Find just your "everyone" group
 client.everyone_group
-#=> #<Flockbot::Models::Group id=971110 name=Everyone>
+=> #<Flockbot::Models::Group {:id=>971110, :name=>"Everyone", :short_name=>"everyone", :everyone?=>true, :subscriber_count=>nil}>
 
 # Get subscriber counts for any group
 client.groups.first.subscriber_count

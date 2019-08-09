@@ -36,7 +36,11 @@ module Flockbot
     end
 
     def inspect
-      "#<#{self.class.name} @connected?=#{connected?}>"
+      "#<#{self.class.name} #{to_json}>"
+    end
+
+    def to_json
+      { subdomain: @subdomain, email: @email, connected?: @connected}
     end
 
 
