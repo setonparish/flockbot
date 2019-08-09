@@ -19,19 +19,13 @@ module Flockbot
         password: @password,
         stayLoggedIn: 1
       }
-
-      response = post("login/go", params)
-
-      if response["success"]
-        @connected = true
-      else
-        raise Flockbot::AuthenticationError.new(response["message"])
-      end
+      post("login/go", params)
+      @connected = true
     end
 
     def post(url, params = {})
       response = connection.post(url, params)
-      response.body
+      body = response.body
     end
 
     def get(url, params = {})
@@ -50,6 +44,7 @@ module Flockbot
       @connection ||= begin
         Faraday.new(url, request: { params_encoder: Faraday::FlatParamsEncoder }) do |builder|
           builder.use :cookie_jar
+          builder.use Flockbot::CustomErrors
           builder.request :url_encoded
           builder.response :json, content_type: "application/json"
           builder.adapter Faraday.default_adapter
