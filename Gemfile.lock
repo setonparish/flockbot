@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    flockbot (0.1.0)
+    flockbot (0.2.0)
       faraday
       faraday-cookie_jar
       faraday_middleware
