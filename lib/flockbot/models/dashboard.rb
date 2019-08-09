@@ -2,7 +2,6 @@ module Flockbot
   module Models
     class Dashboard
       attr_accessor :raw
-      attr_accessor :network_id, :everyone_group_id
 
       def initialize(html)
         @raw = html

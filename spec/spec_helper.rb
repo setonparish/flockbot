@@ -1,5 +1,36 @@
-require "bundler/setup"
 require "flockbot"
+require "bundler/setup"
+require "vcr"
+require "pry"
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr'
+  c.hook_into :faraday
+  c.configure_rspec_metadata!
+
+  c.filter_sensitive_data("subdomain") do |interaction|
+    expression = /https:\/\/(\w+)\W/
+    if match = interaction.request.uri.match(expression)
+      match[1]
+    end
+  end
+
+  c.filter_sensitive_data("me@example.com") do |interaction|
+    expression = /email=(.+?)&/
+    match = interaction.request.body.match(expression)[1]
+    URI.decode(match)
+  end
+
+  c.filter_sensitive_data("me@example.com") do |interaction|
+    expression = /email=(.+?)&/
+    interaction.request.body.match(expression)[1]
+  end
+
+  c.filter_sensitive_data("<PASSWORD>") do |interaction|
+    expression = /password=(.+?)&/
+    interaction.request.body.match(expression)[1]
+  end
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
