@@ -102,7 +102,7 @@ require 'flockbot'
 client = Flockbot::Client.new(subdomain: "myparish", email: "me@example.com", password: "abc123")
 
 group = client.groups.last
-#=> #<Flockbot::Models::Group id=928649 name=Lectors>
+ #<Flockbot::Models::Group {:id=>977777, :name=>"Lectors", :short_name=>"LectorsGroup", :everyone?=>false, :subscriber_count=>nil}>
 
 # adding a new user with just an email
 group.add_user(first_name: "New", last_name: "User", email: "newuser@example.com")
