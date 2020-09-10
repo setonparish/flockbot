@@ -4,13 +4,13 @@ module Flockbot
       attr_accessor :raw, :connection
       attr_accessor :id, :name, :short_name
 
-      def initialize(json, connection)
-        @raw = json
+      def initialize(attrs, connection)
+        @raw = attrs
         @connection = connection
 
-        @id = json["groupID"]
-        @name = json["groupName"]
-        @short_name = json["groupShortname"]
+        @id = attrs[:id]
+        @name = attrs[:name]
+        @short_name = attrs[:short_name]
         @everyone = everyone?
       end
 

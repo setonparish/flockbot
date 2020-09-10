@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday"
   spec.add_dependency "faraday-cookie_jar"
   spec.add_dependency "faraday_middleware"
+  spec.add_dependency "nokogiri"
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "pry"

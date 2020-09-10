@@ -19,9 +19,7 @@ module Flockbot
 
     def groups
       @groups ||= begin
-        params = { startDate: Date.today.prev_month.strftime("%Y-%m-%d"), endDate: Date.today.strftime("%Y-%m-%d"), reportType: "notesSent" }
-        json = connection.post("unolytics/#{dashboard.network_id}/getReport", params)
-        json["info"].map do |attrs|
+        dashboard.group_attributes.map do |attrs|
           Flockbot::Models::Group.new(attrs, connection)
         end
       end

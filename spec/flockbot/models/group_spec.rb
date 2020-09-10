@@ -1,16 +1,16 @@
 require "spec_helper"
 
 RSpec.describe "Flockbot::Models::Group", :vcr do
-  let(:service) { Flockbot::Models::Group.new(json, connection) }
+  let(:service) { Flockbot::Models::Group.new(attrs, connection) }
   let(:connection) { double(:connection, get: response, post: response) }
   let(:response) { {} }
 
   describe "#initialize" do
-    let(:json) do
+    let(:attrs) do
       {
-        "groupID" => "1",
-        "groupName" => "Everyone",
-        "groupShortname" => "everyone",
+        id: "1",
+        name: "Everyone",
+        short_name: "everyone",
       }
     end
 
@@ -25,8 +25,8 @@ RSpec.describe "Flockbot::Models::Group", :vcr do
 
   describe "#everyone?" do
     context "with a short name of 'everyone'" do
-      let(:json) do
-        { "groupShortname" => "everyone" }
+      let(:attrs) do
+        { short_name: "everyone" }
       end
 
       it "is true" do
@@ -35,8 +35,8 @@ RSpec.describe "Flockbot::Models::Group", :vcr do
     end
 
     context "without a short name of 'everyone'" do
-      let(:json) do
-        { "groupShortname" => "not-everyone" }
+      let(:attrs) do
+        { short_name: "not everyone" }
       end
 
       it "is false" do
@@ -46,7 +46,7 @@ RSpec.describe "Flockbot::Models::Group", :vcr do
   end
 
   describe "#subscriber_count" do
-    let(:json) do
+    let(:attrs) do
       { "id" => 999 }
     end
 
@@ -60,8 +60,8 @@ RSpec.describe "Flockbot::Models::Group", :vcr do
   end
 
   describe "#add_user" do
-    let(:json) do
-      { "groupID" => 999 }
+    let(:attrs) do
+      { id: "999" }
     end
 
     let(:response) do
