@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Seton Parish"]
   spec.email         = ["hello@setonparish.com"]
 
-  spec.summary       = "Ruby bindings for multicasting to NEC video projectors."
+  spec.summary       = "Wrapping the flocknote.com site as an API"
   spec.homepage      = "https://github.com/setonparish/flockbot"
   spec.license       = "MIT"
 
