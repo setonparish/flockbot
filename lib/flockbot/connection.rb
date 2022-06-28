@@ -16,10 +16,9 @@ module Flockbot
     def connect!
       params = {
         email: @email,
-        password: @password,
-        stayLoggedIn: 1
+        password: @password
       }
-      post("login/go", params)
+      result = post("login/password", params)
       @connected = true
     end
 
