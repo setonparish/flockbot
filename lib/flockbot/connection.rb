@@ -18,17 +18,28 @@ module Flockbot
         email: @email,
         password: @password
       }
-      result = post("login/password", params)
+      result = post("login/password", params, json: true)
       @connected = true
     end
 
-    def post(url, params = {})
-      response = connection.post(url, params)
-      body = response.body
+    def post(path, params = {}, json: false)
+      response = connection.post(path) do |req|
+        if json
+          # payload is json object
+          req.headers['Content-Type'] = 'application/json'
+          req.body = params.to_json
+        else
+          # payload is standard form params
+          req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+          req.body = params
+        end
+      end
+
+      response.body
     end
 
-    def get(url, params = {})
-      response = connection.get(url, params)
+    def get(path, params = {})
+      response = connection.get(path, params)
       response.body
     end
 
@@ -41,12 +52,11 @@ module Flockbot
 
     def connection
       @connection ||= begin
-        Faraday.new(url, request: { params_encoder: Faraday::FlatParamsEncoder }) do |builder|
+        Faraday.new(url) do |builder|
           builder.use :cookie_jar
-          builder.use Flockbot::CustomErrors
           builder.request :url_encoded
           builder.response :json, content_type: "application/json"
-          builder.adapter Faraday.default_adapter
+          builder.use Flockbot::CustomErrors
         end
       end
     end
