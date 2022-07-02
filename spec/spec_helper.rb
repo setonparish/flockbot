@@ -16,18 +16,13 @@ VCR.configure do |c|
   end
 
   c.filter_sensitive_data("me@example.com") do |interaction|
-    expression = /email=(.+?)&/
+    expression = %r("email":"(.+?)")
     match = interaction.request.body.match(expression)[1]
     URI.decode(match)
   end
 
-  c.filter_sensitive_data("me@example.com") do |interaction|
-    expression = /email=(.+?)&/
-    interaction.request.body.match(expression)[1]
-  end
-
   c.filter_sensitive_data("<PASSWORD>") do |interaction|
-    expression = /password=(.+?)&/
+    expression = %r("password":"(.+?)")
     interaction.request.body.match(expression)[1]
   end
 end

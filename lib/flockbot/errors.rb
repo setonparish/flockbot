@@ -14,10 +14,12 @@ module Flockbot
       case env[:status]
       when 200
         return unless env.response_headers["content-type"] == "application/json"
-        return unless env.body.has_key?("success")
+        json = env.body.is_a?(String) ? JSON.parse(env.body) : env.body
 
-        if !env.body["success"]
-          raise Flockbot::TransactionError.new(env.body["message"])
+        return unless json.has_key?("success")
+
+        if !json["success"]
+          raise Flockbot::TransactionError.new(json["message"])
         end
       end
     end
