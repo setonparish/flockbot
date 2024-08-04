@@ -18,7 +18,7 @@ VCR.configure do |c|
   c.filter_sensitive_data("me@example.com") do |interaction|
     expression = %r("email":"(.+?)")
     match = interaction.request.body.match(expression)[1]
-    URI.decode(match)
+    CGI.unescape(match)
   end
 
   c.filter_sensitive_data("<PASSWORD>") do |interaction|

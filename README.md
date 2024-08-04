@@ -7,7 +7,7 @@ internal API in order to better integrate with external applications.
 
 ### Requirements
 
-* Ruby 2.0+.
+* Ruby 3.3+.
 
 ### Bundler
 

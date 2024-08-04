@@ -85,7 +85,7 @@ RSpec.describe "Flockbot::Models::Group", :vcr do
           mobile_phone: "555-555-5555"
         }
       )
-      expect(service.add_user(params)).to eq(true)
+      expect(service.add_user(**params)).to eq(true)
     end
   end
 end
