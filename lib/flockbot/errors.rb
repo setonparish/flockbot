@@ -9,7 +9,7 @@ module Flockbot
   # being performed is not successful, Flocknote will return a { success: false }
   # status with an error, so raise this.
   #
-  class CustomErrors < Faraday::Response::Middleware
+  class CustomErrors < Faraday::Middleware
     def on_complete(env)
       case env[:status]
       when 200

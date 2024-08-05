@@ -33,12 +33,16 @@ module Flockbot
       @connection.nil? ? false : @connection.connected
     end
 
+    def network_id
+      @connection.nil? ? nil : @connection.network_id
+    end
+
     def inspect
       "#<#{self.class.name} #{to_json}>"
     end
 
     def to_json
-      { subdomain: @subdomain, email: @email, connected?: @connected}
+      { subdomain: @subdomain, email: @email, network_id: network_id, connected?: connected?}
     end
 
 

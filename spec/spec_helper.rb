@@ -14,17 +14,6 @@ VCR.configure do |c|
       match[1]
     end
   end
-
-  c.filter_sensitive_data("me@example.com") do |interaction|
-    expression = %r("email":"(.+?)")
-    match = interaction.request.body.match(expression)[1]
-    CGI.unescape(match)
-  end
-
-  c.filter_sensitive_data("<PASSWORD>") do |interaction|
-    expression = %r("password":"(.+?)")
-    interaction.request.body.match(expression)[1]
-  end
 end
 
 RSpec.configure do |config|

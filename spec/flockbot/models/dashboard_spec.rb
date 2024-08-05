@@ -17,12 +17,6 @@ RSpec.describe "Flockbot::Models::Dashboard", :vcr do
     HTML
   }
 
-  describe "#network_id" do
-    it "extracts the network id" do
-      expect(service.network_id).to eq("16999")
-    end
-  end
-
   describe "#everyone_group_id" do
     it "extracts the network id" do
       expect(service.everyone_group_id).to eq("19990")

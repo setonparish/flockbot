@@ -7,7 +7,7 @@ RSpec.describe "Flockbot::Connection", :vcr do
   end
 
   it "connects successfully with valid flocknote credentials" do
-    service = Flockbot::Connection.new(subdomain: "subdomain", email: "me@example.com", password: "correct")
+    service = Flockbot::Connection.new(subdomain: "subdomain", email: "me@example.com", password: "mypassword")
     service.connect!
     expect(service.connected).to eq(true)
   end

@@ -7,12 +7,7 @@ module Flockbot
 
       def initialize(html)
         @raw = html
-        @network_id = network_id
         @everyone_group_id = everyone_group_id
-      end
-
-      def network_id
-        @raw.match(/data-networkid=\"(\d+)\"/)[1]
       end
 
       def everyone_group_id
@@ -34,7 +29,7 @@ module Flockbot
       end
 
       def to_json
-        { network_id: @network_id, everyone_group_id: @everyone_group_id }
+        { everyone_group_id: @everyone_group_id }
       end
 
       private
