@@ -1,8 +1,10 @@
+require "dotenv/load"
 require "flockbot"
 require "bundler/setup"
 require "vcr"
 require "pry"
 
+Dotenv.load(".env.test", ".env.test.local", ".env")
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/vcr'
   c.hook_into :faraday

@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "dotenv"
   spec.add_dependency "faraday"
   spec.add_dependency "faraday-cookie_jar"
   spec.add_dependency "faraday_middleware"
