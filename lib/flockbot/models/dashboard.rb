@@ -1,17 +1,10 @@
 module Flockbot
   module Models
     class Dashboard
-      require 'nokogiri'
+      require "nokogiri"
 
-      attr_accessor :raw
-
-      def initialize(html)
-        @raw = html
-        @everyone_group_id = everyone_group_id
-      end
-
-      def everyone_group_id
-        @raw.match(/data-itemid=\"(\d+)\"/)[1]
+      def initialize(session:)
+        @session = session
       end
 
       def group_attributes
@@ -24,18 +17,10 @@ module Flockbot
         end
       end
 
-      def inspect
-        "#<#{self.class.name} #{to_json}>"
-      end
-
-      def to_json
-        { everyone_group_id: @everyone_group_id }
-      end
-
       private
 
       def html_document
-        @html_document ||= ::Nokogiri::HTML(@raw)
+        @html_document ||= ::Nokogiri::HTML(@session.get("dashboard"))
       end
     end
   end
