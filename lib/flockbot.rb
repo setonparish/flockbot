@@ -1,6 +1,7 @@
 require "flockbot/client"
 require "flockbot/connection"
 require "flockbot/errors"
+require "flockbot/session"
 require "flockbot/version"
 
 module Flockbot
