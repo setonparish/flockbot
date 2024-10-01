@@ -1,0 +1,150 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://saintisidoreofseville.flocknote.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 04:39:47 GMT
+      content-type:
+      - text/html; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      set-cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]; path=/; domain=flocknote.com; secure;
+        HttpOnly; SameSite=Lax
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE HTML>\n<html class=\"browser-mobile-false browser-tablet-false
+        browser-ios-false browser-android-false  no-js no-touch no-login \"  >\n\n<head>\n\t<meta
+        charset=\"UTF-8\">\n\t<title>Flocknote</title>\n\t<meta name=\"viewport\"
+        id=\"view\" content=\"viewport-fit=cover,width=device-width,initial-scale=1.0,
+        user-scalable = no, minimum-scale=1.0, maximum-scale=1.0, minimal-ui\" />\n\t<meta
+        name=\"apple-mobile-web-app-capable\" content=\"no\">\n\t<meta name=\"apple-mobile-web-app-status-bar-style\"
+        content=\"black-translucent\">\n\t<link rel=\"apple-touch-icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch/touch-icon-iphone.png\">\n\t<link
+        rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch-icon-ipad.png\">\n\t<link
+        rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch/touch-icon-iphone-retina.png\">\n\t<link
+        rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch/touch-icon-ipad-retina.png\">\n\t<link
+        rel=\"shortcut icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/favicon2.ico\"
+        type=\"image/x-icon\">\n\t<link rel=\"icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/favicon2.ico\"
+        type=\"image/x-icon\">\n\t<link rel=\"mask-icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/uno2.svg\"
+        color=\"#278DC1\">\n\t<link rel=\"stylesheet\" href=\"//static.flocknote.com/assets/CORE/libs/fontawesome-5-13/css/all.css?202409300000\">\n\t<link
+        rel=\"stylesheet\" href=\"//static.flocknote.com/assets/CORE/libs/fontawesome-4-7/css/font-awesome.css?202409300000\">\n\t<link
+        rel=\"stylesheet\" href=\"//static.flocknote.com/assets/CORE/libs/jquery-ui/jquery-ui.min.css?202409300000\">\n\n
+        \   <link href='//fonts.googleapis.com/css?family=Kalam:300|Open+Sans:600,400,300'
+        rel='stylesheet' type='text/css'>\n\n    <!-- JS Libraries -->\n    <script
+        src=\"//static.flocknote.com/assets/CORE/libs/jquery361.js\"></script>\n    <script
+        src=\"//static.flocknote.com/assets/CORE/libs/jquery-migrate340.js\"></script>\n\n
+        \   <script src=\"//static.flocknote.com/assets/CORE/libs/jquery-ui.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/underscore.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/backbone.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/modernizr.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/cookie.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/touch2.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/fineuploader5.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/mustache.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/htmlclean.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/rangy-core.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/timeentry.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/detect.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/assetLoader.js?202409300000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/fnReactBus.js?202409300000\"
+        type=\"text/javascript\"></script>\n\n    <script type=\"text/javascript\">\n
+        \       var gChartsLoaded = false;\n        async function loadGoogleCharts()
+        {\n            if (gChartsLoaded) {\n                return;\n            }\n\n
+        \           let script = document.createElement('script');\n            script.src
+        = \"https://www.gstatic.com/charts/loader.js\";\n            document.head.appendChild(script);\n\n
+        \           setTimeout(function() {\n                google.charts.load(\"current\",
+        {packages:[\"corechart\"]});\n                google.charts.setOnLoadCallback(function(){\n
+        \               gChartsLoaded = true;\n            });\n            }, 100);\n
+        \       }\n    </script>\n\n    <script type=\"text/javascript\">\n        var
+        FLOCKNOTEVERSION = '202409300000';\n        var ASSETSDIR = '//static.flocknote.com/assets/';\n\n
+        \       $(document).ready(function(){\n            loadAssets({css:['ui/selectlist/selectlist','miniprofiles/miniprofiles'],js:['ui/selectlist/selectlist','miniprofiles/miniprofiles']});\n
+        \       });\n    </script>\n\n    \n    <script>\n        const allFnAssetsLoaded
+        = [''];\n    </script>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"//static.flocknote.com/css/a_all.css?vers=202409300000\">\n
+        \   <link rel=\"stylesheet\" type=\"text/css\" href=\"//static.flocknote.com/css/a_buttons.css?vers=202409300000\">\n
+        \   <link rel=\"stylesheet\" type=\"text/css\" href=\"//static.flocknote.com/css/a_react.css?vers=202409300000\">\n
+        \   <link rel=\"stylesheet\" type=\"text/css\" href=\"//static.flocknote.com/css/subscribepage.css?vers=202409300000\">\n
+        \   <script src=\"//static.flocknote.com/js/all.js?202409300000\" type=\"text/javascript\"></script>\n
+        \   <script src=\"//static.flocknote.com/js/templates.js?202409300000\" type=\"text/javascript\"></script>\n\n
+        \   <script src=\"//static.flocknote.com/js/subscribepage.js?1727757587\"
+        type=\"text/javascript\"></script>\n\n    <!-- Bootstrapped Data -->\n    <script
+        type=\"text/javascript\">\n        var data = [];\n    </script>\n\n    <script
+        src=\"https://www.google.com/recaptcha/api.js\"></script>\n</head>\n\n<body
+        class=\"single_page \" ontouchstart=\"\">\n\n<div id=\"overlay2_background\"></div>\n<div
+        id=\"overlay2_hodor\"></div>\n<div id=\"fnReactHolder\"></div>\n<div id=\"FnrImportingHolder\"></div>\n<div
+        id=\"FnrOverlayHolder\"></div>\n<div id=\"AnotherFnOverlay\"></div>\n<div
+        id=\"InstantAuthOverlay\"></div>\n<div id=\"FnrMeasurements\"></div>\n<div
+        id=\"FnrConfettiHolder\"></div>\n\n<script>\n  window.__PUBLIC_URL__ = '//static.flocknote.com/reactAssets';\n</script>\n\n<script
+        defer=\"defer\" src=\"//static.flocknote.com/reactAssets/static/js/main.259d283e.js\"></script><link
+        href=\"//static.flocknote.com/reactAssets/static/css/main.206ae57e.css\" rel=\"stylesheet\">\n<style>\nhtml
+        {\n    height: 100%;\n}\nbody {\n    margin:0;\n    padding:0;\n    font-size:
+        16px;\n    font-family: 'Open Sans', sans-serif;\n    font-weight: 300;\n
+        \   color:#15436a;\n    background-attachment: fixed;\n    background-repeat:
+        no-repeat;\n    background-position: center center;\n    background-color:#d4e1e3;\n
+        \   background-size: cover;\n    background-image:url(https://dhdj1c2suf90g.cloudfront.net/backgrounds/bwbg.jpg);\n
+        \   -ms-overflow-style: -ms-autohiding-scrollbar;\n}\n#bg {\n    position:
+        fixed;\n    top:0;\n    left:0;\n    right:0;\n    bottom:0;\n    z-index:
+        -10;\n    background: -moz-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n
+        \   background: -webkit-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n
+        \   background: -o-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n    background:
+        -ms-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n    background: linear-gradient(135deg,
+        #4ea2c6, #1abace, #21d1c3);\n}\n</style>\n<div id=\"bg\"></div>\n<div id=\"overlay_bg\"
+        class=\"off hide\">\n    <div class=\"loading_overlay page page_loading overlay
+        overlay5 off hide\" data-layer=\"5\">\n        <div class=\"page_loading_spinner\"><div
+        class=\"progress_spinner\"></div></div>\n        <div class=\"page_loading_text\">Loading</div>\n
+        \   </div>\n</div>\n\n<form id=\"subscribeForm\" method=\"post\" action=\"/group/addToGroupFromOutside/everyone\">\n
+        \ <div class=\"network_subscribe_around \"><div>\n            <div class=\"network-photo\"
+        style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/everyone/icon.png);\"></div>\n
+        \       <div class=\"network-name title\">Saint Isidore of Seville</div>\n
+        \   \n    \n    \n    <div class=\"description\">\n      Sign up here to get
+        updates.    </div>\n\n    <div>\n      <div class=\"input_around input_around_fname\">\n
+        \       <div class=\"input_helper\">First Name</div>\n        <input type=\"text\"
+        class=\"fname text_input\" name=\"fname\" placeholder=\"First Name\" value=\"\"
+        />\n      </div>\n      <div class=\"input_around input_around_lname\">\n
+        \       <div class=\"input_helper\">Last Name</div>\n        <input type=\"text\"
+        class=\"lname text_input\" name=\"lname\" placeholder=\"Last Name\" value=\"\"
+        />\n      </div>\n      <div class=\"input_around input_around_email \">\n
+        \       <div class=\"input_helper\">Email</div>\n        <input type=\"email\"
+        class=\"email text_input\" name=\"email\" placeholder=\"Email\" value=\"\"
+        >\n\n              </div>\n\n      <div class=\"input_around input_around_phone
+        \">\n\n              <div class=\"input_helper\">Mobile Phone</div>\n        <input
+        type=\"tel\" class=\"phone text_input\" name=\"mobile_phone\" placeholder=\"Mobile
+        Phone\" value=\"\" >\n      \n        \n      </div>\n    </div>\n\n    <div
+        class=\"buttons_around\">\n\n      <button type=\"submit\" class=\"button2
+        green button_signup\" value=\"submit\"><div><div>Sign Me Up</div></div></button>\n
+        \     <div class=\"login_button_around\">\n          <div class=\"text\">Already
+        on Flocknote?</div>\n        <a class=\"button2 medium blue login_button\"
+        href=\"/login\"><div>Login</div></a>\n      </div>\n      <div class=\"clear\"></div>\n
+        \   </div>\n\n    \n    \n  </div>\n  </div>\n\n<div class=\"language_preference\">\n
+        \ <i class=\"fa fa-globe\"></i>\n  <select name=\"languagePreference\" class=\"language_preference_select
+        off\">\n    <option value=\"0\" selected=\"selected\">English</option>\n    <option
+        value=\"1\" >Spanish</option>\n  </select>\n  <input name=\"languagePreferenceJustChanged\"
+        type=\"hidden\" value=\"0\" />\n</div></form>\n<div id=\"ajax_indicator_holder\"><div
+        id=\"ajax_indicator\"></div></div>\n\n\n</body>\n</html>"
+  recorded_at: Tue, 01 Oct 2024 04:39:47 GMT
+recorded_with: VCR 6.3.1

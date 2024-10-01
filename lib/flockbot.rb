@@ -1,6 +1,7 @@
-require "flockbot/version"
-require "flockbot/errors"
 require "flockbot/client"
+require "flockbot/connection"
+require "flockbot/errors"
+require "flockbot/version"
 
 module Flockbot
   class << self
