@@ -1,41 +1,32 @@
 module Flockbot
   module Models
     class Group
-      attr_accessor :raw, :connection
-      attr_accessor :id, :name, :short_name
+      attr_reader :id, :name, :short_name, :subscriber_count
 
-      def initialize(attrs, connection)
-        @raw = attrs
-        @connection = connection
-
-        @id = attrs[:id]
-        @name = attrs[:name]
-        @short_name = attrs[:short_name]
-        @everyone = everyone?
+      def initialize(id:, name:, short_name:, session:)
+        @id = id
+        @name = name
+        @short_name = short_name
+        @subscriber_count = nil
+        @session = session
       end
 
-      def subscriber_count
-        json = connection.get("group/#{id}/getSubscriberCount")
+      def subscriber_count(force: false)
+        return @subscriber_count if !@subscriber_count.nil? && !force
+
+        json = @session.get("group/#{id}/getSubscriberCount")
         count = json["subscriberCount"]
         @subscriber_count = Integer(count) rescue nil
       end
 
       def everyone?
-        @everyone = (@short_name == "everyone")
+        @short_name == "everyone"
       end
 
       def add_user(first_name:, last_name:, email: nil, mobile_phone: nil)
         params = { fname: first_name, lname: last_name, email: email, mobile_phone: mobile_phone }
-        response = connection.post("/group/#{id}/addToGroupByAdmin", params)
+        response = @session.post("/group/#{id}/addToGroupByAdmin", params)
         response["success"]
-      end
-
-      def inspect
-        "#<#{self.class.name} #{to_json}>"
-      end
-
-      def to_json
-        { id: @id, name: @name, short_name: @short_name, everyone?: @everyone, subscriber_count: @subscriber_count}
       end
     end
   end

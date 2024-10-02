@@ -1,0 +1,579 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://saintisidoreofseville.flocknote.com/login/twoFactorAuth
+    body:
+      encoding: UTF-8
+      string: firstFactor=[REDACTED-FLOCKNOTE-EMAIL]&initialLoad=false&requestAuthCode=false
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 21:34:48 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      set-cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]; path=/; domain=flocknote.com; secure;
+        HttpOnly; SameSite=Lax
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":null,"firstFactor":"[REDACTED-FLOCKNOTE-EMAIL]","firstFactorType":"email","allowPasswordForFirstFactor":true,"firstFactorSuccess":false,"maskedSecondFactor":null,"secondFactorType":null,"secondFactorSuccess":false,"networks":null,"userHasAdditionalNetworks":false,"networkID":51767,"networkName":"Saint
+        Isidore of Seville","networkPhotoUrl":"https:\/\/s3-us-west-2.amazonaws.com\/flocknote-photos\/everyone\/icon.png","colorScheme":null,"userFullName":null,"message":null}'
+  recorded_at: Tue, 01 Oct 2024 21:34:48 GMT
+- request:
+    method: post
+    uri: https://saintisidoreofseville.flocknote.com/login/twoFactorAuth
+    body:
+      encoding: UTF-8
+      string: firstFactor=[REDACTED-FLOCKNOTE-EMAIL]&initialLoad=false&password=[REDACTED-FLOCKNOTE-PASSWORD]
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 21:34:50 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":null,"loginSuccess":true,"networkID":51767,"networkName":"Saint
+        Isidore of Seville","networkPhotoUrl":"https:\/\/s3-us-west-2.amazonaws.com\/flocknote-photos\/everyone\/icon.png","colorScheme":null,"userFullName":"Test
+        User","redirectUrl":"https:\/\/saintisidoreofseville.flocknote.com\/dashboard"}'
+  recorded_at: Tue, 01 Oct 2024 21:34:50 GMT
+- request:
+    method: get
+    uri: https://saintisidoreofseville.flocknote.com/user/userData
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 21:34:50 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      set-cookie:
+      - Flocknote-Login-51767=[REDACTED-FLOCKNOTE-LOGIN-COOKIE]; expires=Wed, 16-Oct-2024
+        21:34:50 GMT; Max-Age=1296000; path=/; domain=.flocknote.com; secure; HttpOnly;
+        SameSite=Lax
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":27696601,"fname":"Test","lname":"User","emailInfo":{"email":"[REDACTED-FLOCKNOTE-EMAIL]","isVerified":true},"phoneInfo":null,"addressInfo":{"address1":null,"address2":null,"city":null,"country":null,"state":"OH","zip":"43147"},"isSuperDuper":false,"isSuperAdmin":true,"isGroupAdmin":true,"isComposer":true,"canEditSacraments":false,"isBillingAdmin":true}'
+  recorded_at: Tue, 01 Oct 2024 21:34:50 GMT
+- request:
+    method: get
+    uri: https://saintisidoreofseville.flocknote.com/dashboard
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]; Flocknote-Login-51767=[REDACTED-FLOCKNOTE-LOGIN-COOKIE]
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 21:34:51 GMT
+      content-type:
+      - text/html; charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: "<!DOCTYPE HTML>\n<html class=\"browser-mobile-false browser-tablet-false
+        browser-ios-false browser-android-false  no-js no-touch login \"  >\n\n<head>\n\t<meta
+        charset=\"UTF-8\">\n\t<title>Saint Isidore of Seville // Flocknote</title>\n\t<meta
+        name=\"viewport\" id=\"view\" content=\"viewport-fit=cover,width=device-width,initial-scale=1.0,
+        user-scalable = no, minimum-scale=1.0, maximum-scale=1.0, minimal-ui\" />\n\t<meta
+        name=\"apple-mobile-web-app-capable\" content=\"no\">\n\t<meta name=\"apple-mobile-web-app-status-bar-style\"
+        content=\"black-translucent\">\n\t<link rel=\"apple-touch-icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch/touch-icon-iphone.png\">\n\t<link
+        rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch-icon-ipad.png\">\n\t<link
+        rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch/touch-icon-iphone-retina.png\">\n\t<link
+        rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/touch/touch-icon-ipad-retina.png\">\n\t<link
+        rel=\"shortcut icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/favicon2.ico\"
+        type=\"image/x-icon\">\n\t<link rel=\"icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/favicon2.ico\"
+        type=\"image/x-icon\">\n\t<link rel=\"mask-icon\" href=\"https://dhdj1c2suf90g.cloudfront.net/images/uno2.svg\"
+        color=\"#278DC1\">\n\t<link rel=\"stylesheet\" href=\"//static.flocknote.com/assets/CORE/libs/fontawesome-5-13/css/all.css?202410010000\">\n\t<link
+        rel=\"stylesheet\" href=\"//static.flocknote.com/assets/CORE/libs/fontawesome-4-7/css/font-awesome.css?202410010000\">\n\t<link
+        rel=\"stylesheet\" href=\"//static.flocknote.com/assets/CORE/libs/jquery-ui/jquery-ui.min.css?202410010000\">\n\n
+        \   <link href='//fonts.googleapis.com/css?family=Kalam:300|Open+Sans:600,400,300'
+        rel='stylesheet' type='text/css'>\n\n    <!-- JS Libraries -->\n    <script
+        src=\"//static.flocknote.com/assets/CORE/libs/jquery361.js\"></script>\n    <script
+        src=\"//static.flocknote.com/assets/CORE/libs/jquery-migrate340.js\"></script>\n\n
+        \   <script src=\"//static.flocknote.com/assets/CORE/libs/jquery-ui.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/underscore.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/backbone.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/modernizr.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/cookie.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/touch2.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/fineuploader5.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/mustache.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/htmlclean.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/rangy-core.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/timeentry.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/libs/detect.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/assetLoader.js?202410010000\"
+        type=\"text/javascript\"></script>\n    <script src=\"//static.flocknote.com/assets/CORE/fnReactBus.js?202410010000\"
+        type=\"text/javascript\"></script>\n\n    <script type=\"text/javascript\">\n
+        \       var gChartsLoaded = false;\n        async function loadGoogleCharts()
+        {\n            if (gChartsLoaded) {\n                return;\n            }\n\n
+        \           let script = document.createElement('script');\n            script.src
+        = \"https://www.gstatic.com/charts/loader.js\";\n            document.head.appendChild(script);\n\n
+        \           setTimeout(function() {\n                google.charts.load(\"current\",
+        {packages:[\"corechart\"]});\n                google.charts.setOnLoadCallback(function(){\n
+        \               gChartsLoaded = true;\n            });\n            }, 100);\n
+        \       }\n    </script>\n\n    <script type=\"text/javascript\">\n        var
+        FLOCKNOTEVERSION = '202410010000';\n        var ASSETSDIR = '//static.flocknote.com/assets/';\n\n
+        \       $(document).ready(function(){\n            loadAssets({css:['ui/selectlist/selectlist','miniprofiles/miniprofiles'],js:['ui/selectlist/selectlist','miniprofiles/miniprofiles']});\n
+        \       });\n    </script>\n\n    \n                    <script type=\"text/javascript\"
+        id=\"js_flocknotefeatures_flocknotefeatures\" src=\"//static.flocknote.com/assets/flocknotefeatures/flocknotefeatures.js?202410010000\"
+        data-loaded=\"true\"></script>\n                        <script type=\"text/javascript\"
+        id=\"js_flocknotefeatures_people_people\" src=\"//static.flocknote.com/assets/flocknotefeatures/people/people.js?202410010000\"
+        data-loaded=\"true\"></script>\n            \n        \n        \n    \n    <script>\n
+        \       const allFnAssetsLoaded = ['js_flocknotefeatures_flocknotefeatures','js_flocknotefeatures_people_people'];\n
+        \   </script>\n\t\t\t<link rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/a_all.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/a_buttons.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/a_overlays.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/a_react.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/add-member.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/billing.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/complete-profile.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/cs.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/facebook-pages.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/findMyParish.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/getStartedHelpers.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/group.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/happeSearch.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/happeSearch2.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/heartbeast.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/home.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/importer.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/modernizr.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/network-preferences.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/network.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/network_groups.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/new-note.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/note.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/noteItems.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/notes.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/oldimporter.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/people.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/recaptchapage.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/subscribepage.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/subscription-preferences.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/survey.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/surveyForCoupon.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/text-editor.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/unohealthmonitor.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/verify.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/z_mobile.css?vers=202410010000\">\n\t\t\t\t\t<link
+        rel=\"stylesheet\" type='text/css' href=\"//static.flocknote.com/css/zz_app.css?vers=202410010000\">\n\t\t\n\t<script
+        src=\"//static.flocknote.com/flocknote.js?vers=202410010000\" type=\"text/javascript\"></script>\n\n\t<!--
+        JS Files -->\n\t<script src=\"//static.flocknote.com/js/all.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/billing.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/button.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/chatra.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/composer2.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/event.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/facebook-pages.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/findMyParish.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/freebies.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/group-top.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/group.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/happeSearch.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/home.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/importer.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/inputs.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/network-confirm.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/network-preferences.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/networks.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/new-member.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/new-network.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/note.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/notes.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/oldimporter.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/overlays.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/pages.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/people.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/popular-list.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/profile.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/recaptchapage.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/startComposer.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/subscribepage.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/subscription-preferences.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/superTextingLedger.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/survey.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/surveyForCoupon.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/templates.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t<script src=\"//static.flocknote.com/js/uploader.js?vers=202410010000\"
+        type=\"text/javascript\"></script>\n\t\n\t\t\t<script src=\"https://dhdj1c2suf90g.cloudfront.net/js/libs/nestedSortable.js\"
+        type=\"text/javascript\"></script>\n\n\t<script type=\"text/javascript\">\n\t\tvar
+        twilioCode = \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6InNjb3BlOmNsaWVudDpvdXRnb2luZz9hcHBTaWQ9QVA5NzNjYmNjNzEzMTYxNzE2ZDIwNmJmNjU3MzA3MmQ4NSZhcHBQYXJhbXM9IiwiaXNzIjoiQUNkOWQ0NTRiZWVhNTExYzg5ZWI3MjM3NGVhZDFhODUxNyIsImV4cCI6MTcyNzgyMjA5MX0.Wn5TNHSB2rc_Zt3kqyfQRm_a4Ih6RQbaaPAYpcjHTAE\";\n\t\tvar
+        clientInfo = detect.parse(navigator.userAgent);\n\t\t$(\"html\").addClass(\"detect-browser-\"+clientInfo.browser.family.toLowerCase().replace(/[^A-Za-z0-9]/g,
+        '')+\" detect-browser-major-version-\"+clientInfo.browser.major+\" device-browser-os-family-\"+clientInfo.os.family.toLowerCase().replace(/[^A-Za-z0-9]/g,
+        ''));\n\t</script>\n\n\t<!-- Bootstrapped Data -->\n\t<script type=\"text/javascript\">\n\t\tvar
+        data = {\"userID\":27696601,\"fname\":\"Test\",\"lname\":\"User\",\"chatraData\":{\"name\":\"Test
+        User\",\"userID\":27696601,\"show\":true,\"email\":\"[REDACTED-FLOCKNOTE-EMAIL]\"},\"loginLevel\":\"full\"};\n\t</script>\n\n\t\t\t\t\t<script
+        type=\"text/javascript\" src=\"//static.flocknote.com/assets/CORE/libs/ElementQueries.js\"></script>\n\t\t\t<script
+        type=\"text/javascript\" src=\"//static.flocknote.com/assets/CORE/libs/ResizeSensor.js\"></script>\n\n\n\t\t\t<script>\n\t\t\t\t$(document).ready(function(){\n\t\t\t\t\tif
+        (!_.isUndefined(data.chatraData) && data.chatraData.show) setupChatra(data.chatraData);\n\t\t\t\t});\n\t\t\t</script>\n\t\t\n\n\n\t<style
+        id=\"fn_custom_styles\">.fn_custom_style{}</style>\n\n</head>\n<body ontouchstart=\"\">\n<div
+        id=\"overlay2_background\"></div>\n<div id=\"overlay2_hodor\"></div>\n<div
+        id=\"fnReactHolder\"></div>\n<div id=\"FnrImportingHolder\"></div>\n<div id=\"FnrOverlayHolder\"></div>\n<div
+        id=\"AnotherFnOverlay\"></div>\n<div id=\"InstantAuthOverlay\"></div>\n<div
+        id=\"FnrMeasurements\"></div>\n<div id=\"FnrConfettiHolder\"></div>\n\n<script>\n
+        \ window.__PUBLIC_URL__ = '//static.flocknote.com/reactAssets';\n</script>\n\n<script
+        defer=\"defer\" src=\"//static.flocknote.com/reactAssets/static/js/main.d9f72bdd.js\"></script><link
+        href=\"//static.flocknote.com/reactAssets/static/css/main.206ae57e.css\" rel=\"stylesheet\"><div
+        id=\"help_button\">\n\t<div class=\"help_question\"><i class=\"fas fa-question\"></i></div>\n\t<div
+        class=\"help_close\"><i class=\"fas fa-times\"></i></div>\n</div>\n\n<style>\nhtml
+        {\n    height: 100%;\n}\nbody {\n    margin:0;\n    padding:0;\n    font-size:
+        16px;\n    font-family: 'Open Sans', sans-serif;\n    font-weight: 300;\n
+        \   color:#15436a;\n    background-attachment: fixed;\n    background-repeat:
+        no-repeat;\n    background-position: center center;\n    background-color:#d4e1e3;\n
+        \   background-size: cover;\n    background-image:url(https://dhdj1c2suf90g.cloudfront.net/backgrounds/bwbg.jpg);\n
+        \   -ms-overflow-style: -ms-autohiding-scrollbar;\n}\n#bg {\n    position:
+        fixed;\n    top:0;\n    left:0;\n    right:0;\n    bottom:0;\n    z-index:
+        -10;\n    background: -moz-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n
+        \   background: -webkit-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n
+        \   background: -o-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n    background:
+        -ms-linear-gradient(-45deg, #4ea2c6, #1abace, #21d1c3);\n    background: linear-gradient(135deg,
+        #4ea2c6, #1abace, #21d1c3);\n}\n</style>\n<div id=\"bg\"></div>\n<div id=\"overlay_bg\"
+        class=\"off hide\">\n    <div class=\"loading_overlay page page_loading overlay
+        overlay5 off hide\" data-layer=\"5\">\n        <div class=\"page_loading_spinner\"><div
+        class=\"progress_spinner\"></div></div>\n        <div class=\"page_loading_text\">Loading</div>\n
+        \   </div>\n</div>\n\n\t<div class=\"manage_groups_behind\"></div>\n\t<div
+        class=\"group_context_menu\">\n\t\t<div class=\"group_context_menu_inside\">\n\t\t\t<a
+        class=\"subgroups_help_button\" href=\"https://help.flocknote.com/article/106-how-do-i-set-up-subgroups\"
+        target=\"_blank\"><i class=\"fa fa-question-circle\"></i></a>\n\t\t\t<div
+        class=\"group_context_menu_default\">\n\t\t\t\t<i class=\"fa fa-list-ul\"></i>\n\t\t\t\t<div
+        class=\"title\">Manage your groups</div>\n\t\t\t\t<div class=\"help_text\">To
+        reorder groups, drag the handles next to any group. To organize them using
+        subgroups, click the <i class=\"fa fa-ellipsis-h\"></i> next to any group.
+        Members of a subgroup are automatically made members of its parent group.
+        Learn more about subgroups <a href=\"https://help.flocknote.com/article/106-how-do-i-set-up-subgroups\"
+        target=\"_blank\">here</a>.</div>\n\t\t\t\t\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t<div
+        class=\"button blue add_group show_overlay\" data-overlay=\".add-group-overlay\"
+        data-layer=\"2\" data-cy=\"manageGroupNewGroupButton\" ><div>New Group</div></div>
+        \n\t\t\t\t\n\t\t\t\t<div class=\"reorder_button_done button green\" data-cy=\"manageGroupDoneButton\"
+        ><div>Done</div></div>\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t</div>\n\t\t\t\n\t\t\t<div
+        class=\"group_context_menu_selected\">\n\t\t\t\t<div class=\"group_context_menu_title\"></div>\n\t\t\t\t<div
+        class=\"main_menu_button group_context_menu_button\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<i
+        class=\"fa fa-arrow-circle-left\"></i>\n\t\t\t\t\t\tBack\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div
+        class=\"make_level1_button group_context_menu_button\">\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<i
+        class=\"fa fa-level-up\"></i>\n\t\t\t\t\t\tMake this a top-level group\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div
+        class=\"make_level2_button group_context_menu_button\">\n\t\t\t\t\t<div class=\"forLevel1\">\n\t\t\t\t\t\t<i
+        class=\"fa fa-compress\"></i>\n\t\t\t\t\t\tMake this a mid-level group\n\t\t\t\t\t</div>\n\t\t\t\t\t<div
+        class=\"forOtherLevels\">\n\t\t\t\t\t\t<i class=\"fa fa-unlink\"></i>\n\t\t\t\t\t\tDetach
+        from parent group\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"make_subgroup_of_button_holder\">\n\t\t\t\t\t<div
+        class=\"subgroups_text\">\n\t\t\t\t\t\t<i class=\"fa fa-level-down\"></i>\n\t\t\t\t\t\tMake
+        this group a subgroup of...\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"subgroups_list\">\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\n\n<div
+        class=\"network_around page page_network on\" data-networkid=\"51767\" data-unolytics=\"1\">\n\n<div
+        class=\"hide_groups_mobile\"></div><div class=\"network_left\">\n\t<div class=\"network_left_shadow\"></div>\n\t\n\t\n\t\n\t<div
+        class=\"network_top\">\n\t\t\n\t\t\n\t\t<div class=\"other_networks\">\n\t\t\t<i
+        class=\"fa fa-user-circle-o\"></i>\n\t\t\t<div class=\"other_networks_text\">\n\t\t\tMy
+        Account <i class=\"fa fa-angle-down\"></i>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div
+        class=\"group_item_on_arrow\"></div>\t\t\n\t\t<div class=\"network_icon can_admin
+        receive_image\" style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/everyone/icon.png);\">\n\t\t\t\t\t\t\t<div
+        class=\"upload_around\"><div class=\"upload_icon fa fa-arrow-circle-o-up\"></div><input
+        type=\"file\" class=\"change_network_photo upload_button\" data-type=\"photo/group\"
+        data-itemid=\"931283\" /></div>\n\t\t\t\t\t</div>\n\t\t<div class=\"network_name
+        update_network_name_text_51767\">\n\t\t\tSaint Isidore <em>of</em>&nbsp; Seville\t\t</div>\n\t\t\t\t\t\t\n\t\t<div
+        class=\"get_started_helper get_started_helper_icon\" data-text=\"Just click
+        the network image to upload a new one. When you're viewing a group, you can
+        also click the group's image to replace it anytime.\"><div></div></div>\n\t\t\n\t\t\n\t\t<div
+        class=\"main_buttons can_admin_billing \" >\n\t\t\n\t\t<div class=\"super_search_holder\">\n\t\t\t<input
+        type=\"text\" autocomplete=\"off\" placeholder=\"SuperSearch\" class=\"super_search_input\"
+        data-canviewusers=\"1\">\n\t\t\t\n\t\t\t<i class=\"fa fa-search\"></i>\n\t\t\t<i
+        class=\"fa fa-times-circle clear_search\"></i>\n\t\t</div>\n\t\t\n\t\t\t\t\t<div
+        class=\"compose_button compose_button_email main_button\" data-cy=\"emailComposeButton\"
+        onclick=\"\" data-type=\"email\" data-helptext=\"Send an Email\">\n\t\t\t\t<div
+        class=\"main_button_inside\">\n\t\t\t\t\t<div class=\"compose_button_loading\"></div>\n\t\t\t\t\t<i
+        class=\"fa fa-envelope\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"compose_button
+        compose_button_sms main_button\" data-cy=\"textComposeButton\" onclick=\"\"
+        data-type=\"sms\"  data-helptext=\"Send a Text Message\">\n\t\t\t\t<div class=\"main_button_inside\">\n\t\t\t\t\t<div
+        class=\"compose_button_loading\"></div>\n\t\t\t\t\t<i class=\"fa fa-mobile\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\t
+        \n\t\t\n\t\t\t\t\t<div class=\"add_member_button main_button\" onclick=\"\"
+        data-helptext=\"Add a new member\">\n\t\t\t\t<div class=\"main_button_inside\">\n\t\t\t\t\t<div
+        class=\"compose_button_loading\"></div>\n\t\t\t\t\t<i class=\"fa fa-plus\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t\n\t\t\t<div
+        class=\"all_groups_preferences_button main_button\" onclick=\"\" data-helptext=\"Manage
+        my notification preferences\">\n\t\t\t\t<div class=\"main_button_inside\">\n\t\t\t\t\t<i
+        class=\"fa fa-bell-o\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div
+        class=\"more_menu_button main_button \" onclick=\"\" data-helptext=\"More
+        options\">\n\t\t\t<div class=\"main_button_inside\">\n\t\t\t\t<i class=\"fa
+        fa-ellipsis-h\"></i>\n\t\t\t\t\t\t\t</div>\n\n\t\t</div>\n\t\t\n\t\t\t\t\n\t\t<select
+        id=\"network_more_menu\">\n\t\t\t<option class=\"do_not_include\" selected></option>\n\t\t\t\t\t\t\t<option
+        data-icon=\"user fad\" value=\"my_info_button\" data-cy=\"moreMenuMyInfoBtn\">My
+        Info</option>\n\t\t\t\t\t\t\t\t\t\t<option data-icon=\"cog fad\" value=\"network_settings_button\">Settings</option>\n\t\t\t\t<option
+        data-icon=\"envelope-open-text fad\" value=\"network_welcome_message_button\">Welcome
+        Message</option>\n\t\t\t\t<option data-icon=\"thumbs-up fad\" value=\"network_social_button\">Social
+        & Sharing</option>\n\t\t\t\t<option data-icon=\"lock fad\" value=\"network_security_button\">Security</option>\n\t\t\t\t\t\t\t\t\t\t<option
+        data-icon=\"dollar-sign fas\" value=\"billing_button\">Billing</option>\n\t\t\t\t\t</select>\n\n\t\t\t\t\n\t\t\n\t\t<div
+        class=\"main_buttons_tooltip\">Write an email note</div>\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t</div>\n\t\t\n\t\t<div
+        class=\"get_started_helper get_started_helper_sendemail\" data-button=\"sendemail\"
+        data-text=\"To create a new email note, just click the envelope here.  Now
+        you're off to the races!\"><div></div></div>\n\t\t<div class=\"get_started_helper
+        get_started_helper_sendtext\" data-button=\"sendtext\" data-text=\"To start
+        a text to your members, click the mobile phone here.  Remember, with great
+        power comes great responsibility.\"><div></div></div>\n\t\t\n\t\t<div class=\"get_started_helper
+        get_started_helper_settings\" data-text=\"From within a group, you can access
+        texting settings by clicking the gear icon on the top-right corner.\"><div></div></div>\n\t\t\n\t\t\n\t\t<div
+        class=\"get_started_helper get_started_helper_addmember\" data-text=\"Click
+        the plus button here to add a single member to your network.  If you are viewing
+        one of your groups, adding a member from here will also add them to that group.\"><div></div>\n\t\t</div>\n\t\t\n\t\t<div
+        class=\"get_started_helper get_started_helper_groups update_on_resize\" data-button=\"creategroup\"
+        data-text='Click \"Manage Groups\" to add or edit groups. You can also rearrange
+        your groups and create subgroups here.' data-mobiletext=\"Rotate your device
+        or expand the window to manage your groups.\">\n\t\t\t<div></div>\n\t\t</div>\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t</div>\n\n\t\n\t\n\t\t\n\n\n\t\t\n\t\t\n\t\t\n\t\t\n<div
+        class=\"network_groups_around\">\n\n\t<div class=\"network_group_mobile_toggle
+        has_unolytics_tab\">\n\t\t<div class=\"network_group_top_toggle_item \" data-filterid=\"dashboard\"
+        onclick=\"\">\n\t\t\t<i class=\"fa fa-dashboard network_group_top_toggle_item_icon\"></i><span
+        class=\"network_group_top_toggle_item_text\">Dashboard</span>\n\t\t</div>\n\t\t<div
+        class=\"network_group_top_toggle_item network_group_top_toggle_item_mynotes\"
+        data-filterid=\"mynotes\" onclick=\"\">\n\t\t\t<i class=\"fa fa-inbox network_group_top_toggle_item_icon\"></i><span
+        class=\"network_group_top_toggle_item_text\">My Notes</span>\n\t\t</div>\n\t\t\t\t\t<div
+        class=\"network_group_top_toggle_item \" data-filterid=\"unolytics\" onclick=\"\">\n\t\t\t\t<i
+        class=\"fa fa-line-chart network_group_top_toggle_item_icon\"></i><span class=\"network_group_top_toggle_item_text\">Unolytics</span>\n\t\t\t</div>\n\t\t\t\t<div
+        class=\"network_group_top_toggle_item network_group_top_toggle_item_groups\"
+        data-filterid=\"groups\" onclick=\"\">\n\t\t\t<i class=\"fa fa-list-ul network_group_top_toggle_item_icon\"></i><span
+        class=\"network_group_top_toggle_item_text\">Groups <i class=\"fa fa-caret-down\"></i></span>\n\t\t</div>\n\t\t<div
+        class=\"clear\"></div>\n\t</div>\n\n\t<div class=\"network_groups\">\n\n\t\t<div
+        class=\"network_groups_inside\">\n\n\t\t\t<div class=\"network_apps\">\n\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_dashboard\" data-groupid=\"dashboard\" data-shortname=\"dashboard\"
+        data-shortnamesearch=\"dashboard\" data-parentgroup=\"0\">\n\n\t\t\t\t\t<div
+        class=\"group_item_inside\">\n\n\t\t\t\t\t\t<div class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t<div
+        class=\"group_icon\"><i class=\"fad fa-tachometer fa-swap-opacity\"></i></div>\n\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t<div class=\"group_name\" data-cy=\"leftNavDashboard\">My
+        Dashboard</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"group_item
+        group_item_mynotes\" data-groupid=\"mynotes\" data-shortname=\"mynotes\" data-shortnamesearch=\"mynotes\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t<div class=\"group_item_inside\">\n\n\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t<div class=\"group_icon\"><i
+        class=\"fad fa-mailbox\"></i></div>\n\t\t\t\t\t\t\t<div class=\"group_type_icon
+        group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t<div class=\"group_type_icon
+        group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t<div class=\"group_name_around\">\n\t\t\t\t\t\t\t\t<div
+        class=\"group_name\" data-cy=\"leftNavNotes\">My Notes</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t</div>\n\n\t\t\t\t<!-- START
+        REPORTS -->\n\t\t\t\t\t\t\t\t\t<div class=\"group_item group_item_reports\"
+        data-groupid=\"reports\" data-shortname=\"reports\" data-shortnamesearch=\"reports\"
+        data-parentgroup=\"0\">\n\t\t\t\t\t\t<div class=\"group_item_inside\">\n\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\t\t\t\t\t\t\t\t<div class=\"group_icon\"><i
+        class=\"fal fa-table\"></i></div>\n\t\t\t\t\t\t\t\t<div class=\"group_type_icon
+        group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t<div class=\"group_type_icon
+        group_type_icon_hidden fa fa-eye-slash\"></div>\n\t\t\t\t\t\t\t\t<div class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name\" data-cy=\"leftNavReports\">Reports</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<!--
+        END REPORTS -->\n\n\t\t\t\t\t\t\t\t\t<div class=\"group_item group_item_signups\"
+        data-groupid=\"signups\" data-shortname=\"signups\" data-shortnamesearch=\"signups\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t\t<div class=\"group_item_inside\">\n\n\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t<div class=\"group_icon\"><i
+        class=\"fad fa-clipboard-check\"></i></div>\n\t\t\t\t\t\t\t\t<div class=\"group_type_icon
+        group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t<div class=\"group_type_icon
+        group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t<div class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name\" data-cy=\"leftNavSignups\">Signups</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_unolytics\" data-groupid=\"unolytics\" data-shortname=\"unolytics\"
+        data-shortnamesearch=\"unolytics\" data-parentgroup=\"0\">\n\n\t\t\t\t\t\t<div
+        class=\"group_item_inside\">\n\n\t\t\t\t\t\t\t<div class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t<div
+        class=\"group_icon\"><i class=\"fad fa-chart-line\"></i></div>\n\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t<div class=\"group_name\"
+        data-cy=\"leftNavUnolytics\">Unolytics</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_giving\" data-groupid=\"giving\" data-shortname=\"giving\"
+        data-shortnamesearch=\"giving\" data-parentgroup=\"0\">\n\n\t\t\t\t\t\t<div
+        class=\"group_item_inside\">\n\n\t\t\t\t\t\t\t<div class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t<div
+        class=\"group_icon\"><i class=\"fad fa-money-bill-wave\"></i></div>\n\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t<div class=\"group_name\"
+        data-cy=\"leftNavGiving\">Giving</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_everyone group_item_group_id_931283 group_type_open
+        group_subscribed\" data-groupid=\"931283\" data-cy=\"leftNavEveryoneGroup\"
+        data-shortname=\"everyone\" data-shortnamesearch=\"everyone\" data-parentgroup=\"0\">\n\n\t\t\t\t\t<div
+        class=\"group_item_inside\">\n\n\t\t\t\t\t\t<div class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t<div
+        class=\"group_icon\"><i class=\"fad fa-users\"></i></div>\n\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t<div class=\"group_name\" data-cy=\"leftNavEveryone\">Everyone</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t\t\n\t\t\t<div
+        class=\"network_groups_sortable \">\n\t\t\t\t<div class=\"groups_sortable\">\n\t\t\t\t\t<ol>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t<li
+        class=\"stragglerLi\">\n\n\t\t\t\t\t\t\t<div class=\"group_item\" data-groupid=\"0\"></div>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ol>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_group_id_931284 group_type_hidden update_group_shortname_data_931284
+        \ level2 \" data-groupid=\"931284\" data-shortname=\"staff\" data-shortnamesearch=\"staff\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_item_inside\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_icon
+        update_group_icon_931284\" style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/staff/icon.png);\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_name
+        update_group_name_text_931284\">Staff</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"handle\"><i class=\"fa fa-sort\"></i></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_context_menu_icon\"><i class=\"fa fa-ellipsis-h\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_expand_icon\"><i
+        class=\"fa fa-chevron-circle-down\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_group_id_931285 group_type_closed update_group_shortname_data_931285
+        \ level2 \" data-groupid=\"931285\" data-shortname=\"volunteers\" data-shortnamesearch=\"volunteers\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_item_inside\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_icon
+        update_group_icon_931285\" style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/ministryleaders/icon.png);\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_name
+        update_group_name_text_931285\">Volunteer Team</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"handle\"><i class=\"fa fa-sort\"></i></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_context_menu_icon\"><i class=\"fa fa-ellipsis-h\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_expand_icon\"><i
+        class=\"fa fa-chevron-circle-down\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_group_id_931286 group_type_open update_group_shortname_data_931286
+        \ level2 \" data-groupid=\"931286\" data-shortname=\"youth\" data-shortnamesearch=\"youth\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_item_inside\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_icon
+        update_group_icon_931286\" style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/pastoralcouncil/icon.png);\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_name
+        update_group_name_text_931286\">Youth Ministry</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"handle\"><i class=\"fa fa-sort\"></i></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_context_menu_icon\"><i class=\"fa fa-ellipsis-h\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_expand_icon\"><i
+        class=\"fa fa-chevron-circle-down\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_group_id_931287 group_type_open update_group_shortname_data_931287
+        \ level2 \" data-groupid=\"931287\" data-shortname=\"biblestudy\" data-shortnamesearch=\"biblestudy\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_item_inside\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_icon
+        update_group_icon_931287\" style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/altarservers/icon.png);\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_name
+        update_group_name_text_931287\">Bible Study Group</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"handle\"><i class=\"fa fa-sort\"></i></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_context_menu_icon\"><i class=\"fa fa-ellipsis-h\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_expand_icon\"><i
+        class=\"fa fa-chevron-circle-down\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\n\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item group_item_group_id_931288 group_type_hidden update_group_shortname_data_931288
+        \ level2 \" data-groupid=\"931288\" data-shortname=\"test\" data-shortnamesearch=\"test\"
+        data-parentgroup=\"0\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_item_inside\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_contents\">\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_icon
+        update_group_icon_931288\" style=\"background-image:url(//d6iyrqjd26xke.cloudfront.net/test/icon.png);\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_closed fa fa-lock\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_type_icon group_type_icon_hidden fa fa-eye-slash\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_name_around\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_name
+        update_group_name_text_931288\">Aaron&#039;s Test Group</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"handle\"><i class=\"fa fa-sort\"></i></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_context_menu_icon\"><i class=\"fa fa-ellipsis-h\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"clear\"></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"group_item_on_arrow\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"group_expand_icon\"><i
+        class=\"fa fa-chevron-circle-down\"></i></div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ol>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\n\t\t\t\t\t</ol>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div
+        class=\"network_show_all_groups_around\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div
+        class=\"network_manage_groups\">\n\t\t\t\t\t\t<div data-cy=\"leftNavManageGroups\">\n\t\t\t\t\t\t\t<i
+        class=\"fad fa-list\"></i>Manage groups\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t<div
+        class=\"network_groups_padding\"></div>\n\t\t</div>\n\t</div>\n</div>\n\t\n</div>\n\n\n<div
+        class=\"group_around\">\n<div class=\"hide_groups_mobile\" onclick=\"\"></div>\n</div>\n</div><div
+        id=\"ajax_indicator_holder\"><div id=\"ajax_indicator\"></div></div>\n\n\n</body>\n</html>"
+  recorded_at: Tue, 01 Oct 2024 21:34:51 GMT
+recorded_with: VCR 6.3.1

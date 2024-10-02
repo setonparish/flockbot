@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://saintisidoreofseville.flocknote.com/login/twoFactorAuth
+    body:
+      encoding: UTF-8
+      string: firstFactor=[REDACTED-FLOCKNOTE-EMAIL]&initialLoad=false&requestAuthCode=false
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 04:32:13 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      set-cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]; path=/; domain=flocknote.com; secure;
+        HttpOnly; SameSite=Lax
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":null,"firstFactor":"[REDACTED-FLOCKNOTE-EMAIL]","firstFactorType":"email","allowPasswordForFirstFactor":true,"firstFactorSuccess":false,"maskedSecondFactor":null,"secondFactorType":null,"secondFactorSuccess":false,"networks":null,"userHasAdditionalNetworks":false,"networkID":51767,"networkName":"Saint
+        Isidore of Seville","networkPhotoUrl":"https:\/\/s3-us-west-2.amazonaws.com\/flocknote-photos\/everyone\/icon.png","colorScheme":null,"userFullName":null,"message":null}'
+  recorded_at: Tue, 01 Oct 2024 04:32:13 GMT
+- request:
+    method: post
+    uri: https://saintisidoreofseville.flocknote.com/login/twoFactorAuth
+    body:
+      encoding: UTF-8
+      string: firstFactor=[REDACTED-FLOCKNOTE-EMAIL]&initialLoad=false&password=[REDACTED-FLOCKNOTE-PASSWORD]
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 04:32:14 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":null,"loginSuccess":true,"networkID":51767,"networkName":"Saint
+        Isidore of Seville","networkPhotoUrl":"https:\/\/s3-us-west-2.amazonaws.com\/flocknote-photos\/everyone\/icon.png","colorScheme":null,"userFullName":"Test
+        User","redirectUrl":"https:\/\/saintisidoreofseville.flocknote.com\/dashboard"}'
+  recorded_at: Tue, 01 Oct 2024 04:32:14 GMT
+- request:
+    method: get
+    uri: https://saintisidoreofseville.flocknote.com/user/userData
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 04:32:15 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      set-cookie:
+      - Flocknote-Login-51767=[REDACTED-FLOCKNOTE-LOGIN-COOKIE]; expires=Wed, 16-Oct-2024
+        04:32:14 GMT; Max-Age=1296000; path=/; domain=.flocknote.com; secure; HttpOnly;
+        SameSite=Lax
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":27696601,"fname":"Test","lname":"User","emailInfo":{"email":"[REDACTED-FLOCKNOTE-EMAIL]","isVerified":true},"phoneInfo":null,"addressInfo":{"address1":null,"address2":null,"city":null,"country":null,"state":"OH","zip":"43147"},"isSuperDuper":false,"isSuperAdmin":true,"isGroupAdmin":true,"isComposer":true,"canEditSacraments":false,"isBillingAdmin":true}'
+  recorded_at: Tue, 01 Oct 2024 04:32:15 GMT
+- request:
+    method: get
+    uri: https://saintisidoreofseville.flocknote.com/user/userData
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.4
+      Cookie:
+      - Flocknote=[REDACTED-FLOCKNOTE-COOKIE]; Flocknote-Login-51767=[REDACTED-FLOCKNOTE-LOGIN-COOKIE]
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 01 Oct 2024 04:32:15 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      expires:
+      - Wed, 11 Jan 1984 05:00:00 GMT
+      cache-control:
+      - max-age=0, no-cache, no-store, must-revalidate
+      x-powered-by:
+      - Bunnies and Sunshine
+      pragma:
+      - no-cache
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"userID":27696601,"fname":"Test","lname":"User","emailInfo":{"email":"[REDACTED-FLOCKNOTE-EMAIL]","isVerified":true},"phoneInfo":null,"addressInfo":{"address1":null,"address2":null,"city":null,"country":null,"state":"OH","zip":"43147"},"isSuperDuper":false,"isSuperAdmin":true,"isGroupAdmin":true,"isComposer":true,"canEditSacraments":false,"isBillingAdmin":true}'
+  recorded_at: Tue, 01 Oct 2024 04:32:15 GMT
+recorded_with: VCR 6.3.1

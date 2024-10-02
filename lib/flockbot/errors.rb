@@ -2,6 +2,7 @@ require "faraday"
 
 module Flockbot
   class FlockbotError < StandardError; end;
+  class SessionLoginError < FlockbotError; end
   class TransactionError < FlockbotError; end
 
   #
