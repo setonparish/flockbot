@@ -5,11 +5,11 @@ of the [Flocknote](https://www.flocknote.com/) application. Flocknote does
 not currently expose a public API, so this gem leverages parts of the
 internal API in order to better integrate with external applications.
 
-### Requirements
+## Requirements
 
-* Ruby 3.3+.
+* Ruby 3.3
 
-### Bundler
+## Setup
 
 Add the following to your `Gemfile`:
 
@@ -17,90 +17,71 @@ Add the following to your `Gemfile`:
 gem "flockbot", git: "git://github.com/setonparish/flockbot"
 ```
 
-## Configuration
+## Usage
 
-The `email` and `password` need to be for a Flocknote user with admin rights.
-The `subdomain` is the first part of your Flocknote URL.  Example: https://myparish.flocknote.com/
-
-You can configure the client in three different ways depending on your needs.
-
-### Manual configuration
+### Create a `Flockbot::Client` with authenticated session
 
 ```ruby
-require 'flockbot'
+#
+# 1. Create a session
+#
+# Note: The `subdomain` is the first part of your Flocknote URL.  Example: https://myparish.flocknote.com
+session = Flockbot::Session.new(subdomain: "myparish", email: "me@example.com")
 
-client = Flockbot::Client.new(subdomain: "myparish", email: "me@example.com", password: "abc123")
+#
+# 2. Authenticate session using one of three ways:
+#
+# (A) using password
+session.login!(password: "mypassword")
+
+# (B) using one time code
+session.send_one_time_code
+session.login!(code: "1234") # from flocknote email
+
+# (C) using a previous session token
+token = some_prior_session.session_token
+session.login!(token: token)
+
+#
+# 3. Create a client
+#
+client = Flockbot::Client.new(session: session)
 ```
 
-### Block configuration
+### Client Usage
 
-``` ruby
-require 'flockbot'
-
-Flockbot.configure do |config|
-  config.subdomain = "myparish"
-  config.email = "me@example.com"
-  config.password = "abc123"
-end
-
-client = Flockbot::Client.new
-```
-
-### Environment variable configuration
-You can also set environment variables and Flockbot will use those by default.
+#### List all of your groups
 
 ```ruby
-require 'flockbot'
-
-# environment variables set somewhere in your application
-# ENV["FLOCKBOT_SUBDOMAIN"] = "myparish"
-# ENV["FLOCKBOT_EMAIL"] = "me@example.com"
-# ENV["FLOCKBOT_PASSWORD"] = "abc123"
-
-client = Flockbot::Client.new
-```
-
-## Quick Start Usage Examples
-
-### Groups
-
-You can retrieve information about your Flocknote groups.
-
-```ruby
-require 'flockbot'
-
-client = Flockbot::Client.new(subdomain: "myparish", email: "me@example.com", password: "abc123")
-
-# List all of your groups
 client.groups
 => [#<Flockbot::Models::Group {:id=>971110, :name=>"Everyone", :short_name=>"everyone", :everyone?=>true, :subscriber_count=>nil}>,
  #<Flockbot::Models::Group {:id=>977777, :name=>"Lectors", :short_name=>"LectorsGroup", :everyone?=>false, :subscriber_count=>nil}>,
  #<Flockbot::Models::Group {:id=>876666, :name=>"Alpha", :short_name=>"Alpha", :everyone?=>false, :subscriber_count=>nil}>]
+```
 
-# Find just your "everyone" group
-client.everyone_group
-=> #<Flockbot::Models::Group {:id=>971110, :name=>"Everyone", :short_name=>"everyone", :everyone?=>true, :subscriber_count=>nil}>
+#### Get a subscriber count for any group
 
-# Get subscriber counts for any group
+```ruby
 client.groups.first.subscriber_count
 #=> 924
 ```
 
-### Adding Users
+#### Find the `everyone` group
 
-You can add a new or existing user to any Flocknote group.
+```ruby
+client.everyone_group
+=> #<Flockbot::Models::Group {:id=>971110, :name=>"Everyone", :short_name=>"everyone", :everyone?=>true, :subscriber_count=>nil}>
+```
 
-A `first_name` and `last_name` are always required as well as an `email`, `mobile_phone`, or both.
+#### Add a new or existing user to any Flocknote group
+
+A `first_name` and `last_name` are always required and then you must supply either an `email`, `mobile_phone`, or both.
 
 If the user is not currently in Flocknote, they will be added to the group you specified as well as your "everyone" group.
 
 If the user already exists in Flocknote, they will be automatically matched on either `email` or `mobile_phone` and added to the specified group.  This is true even if the name provided is not the exact one found in Flocknote.  As an example, if you already have a user named "James Smith" in Flocknote with email "jim@example.com" and you use Flockbot to add "Jimmy Smith" with email "jim@example.com" to your "Lectors" group, your existing user will added to the "RCIA group".  A duplicate user will not be created, nor will Flockbot change the existing user's name.
 
 ```ruby
-require 'flockbot'
-
-client = Flockbot::Client.new(subdomain: "myparish", email: "me@example.com", password: "abc123")
-
 group = client.groups.last
  #<Flockbot::Models::Group {:id=>977777, :name=>"Lectors", :short_name=>"LectorsGroup", :everyone?=>false, :subscriber_count=>nil}>
 
@@ -124,6 +105,8 @@ After checking out the repo, run `bin/setup` to install dependencies. You can al
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/setonparish/flockbot.
+
+Tests can be run by running `bundle exec rspec`
 
 ## License
 
