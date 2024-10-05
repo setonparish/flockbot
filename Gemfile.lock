@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    flockbot (0.6.0)
+    flockbot (1.0.0)
       dotenv
       faraday
       faraday-cookie_jar
