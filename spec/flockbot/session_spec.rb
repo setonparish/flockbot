@@ -8,6 +8,12 @@ RSpec.describe Flockbot::Session, :vcr do
     )
   end
 
+  describe "#inspect" do
+    it "does not contain private information" do
+      expect(session.to_s).to_not include(/email/)
+    end
+  end
+
   describe "#login!" do
     context "using a password" do
       context "when the password is valid" do

@@ -86,5 +86,9 @@ module Flockbot
 
       post("login/twoFactorAuth", params)
     end
+
+    def inspect
+      "#<#{self.class.name} @subdomain=#{@subdomain} connection=#{@connection}>"
+    end
   end
 end
