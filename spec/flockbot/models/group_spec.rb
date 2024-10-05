@@ -30,6 +30,23 @@ RSpec.describe Flockbot::Models::Group, :vcr do
     end
   end
 
+  describe "#inspect" do
+    let(:group) do
+      Flockbot::Models::Group.new(
+        id: flocknote_group_id,
+        name: "My Group",
+        short_name: "my group",
+        session:
+      )
+    end
+
+    it "does not contain session information", aggregate_failures: true do
+      inspected = group.send(:inspect)
+      expect(inspected).to include(/short_name/)
+      expect(inspected).to_not include(/session/)
+    end
+  end
+
   describe "#everyone?" do
     let(:group) do
       Flockbot::Models::Group.new(

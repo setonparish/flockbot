@@ -28,6 +28,15 @@ module Flockbot
         response = @session.post("/group/#{id}/addToGroupByAdmin", params)
         response["success"]
       end
+
+      private
+
+      def inspect
+        excluded_vars = [:@session]
+        instance_vars = instance_variables.reject { |var| excluded_vars.include?(var) }
+        values = instance_vars.map { |var| "#{var}=#{instance_variable_get(var).inspect}" }
+        "#<#{self.class}: #{values.join(', ')}>"
+      end
     end
   end
 end
