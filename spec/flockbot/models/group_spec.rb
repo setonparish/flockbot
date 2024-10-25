@@ -17,16 +17,16 @@ RSpec.describe Flockbot::Models::Group, :vcr do
     let(:group) do
       Flockbot::Models::Group.new(
         id: flocknote_group_id,
-        name: "Everyone",
-        short_name: "everyone",
+        name: "My Group\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t",
+        short_name: "MyGroup",
         session:
       )
     end
 
     it "sets correct attributes", aggregate_failures: true do
       expect(group.id).to eq(flocknote_group_id)
-      expect(group.name).to eq("Everyone")
-      expect(group.short_name).to eq("everyone")
+      expect(group.name).to eq("My Group")
+      expect(group.short_name).to eq("MyGroup")
     end
   end
 

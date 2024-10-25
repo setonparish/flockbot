@@ -5,7 +5,7 @@ module Flockbot
 
       def initialize(id:, name:, short_name:, session:)
         @id = id
-        @name = name
+        @name = name.strip
         @short_name = short_name
         @subscriber_count = nil
         @session = session
