@@ -40,6 +40,10 @@ module Flockbot
       json["success"] && !!json["networkID"]
     end
 
+    def inspect
+      "#<#{self.class.name} @subdomain=#{@subdomain} connection=#{@connection}>"
+    end
+
     private
 
     def login(**args)
@@ -85,10 +89,6 @@ module Flockbot
       post("login/twoFactorAuth", params)
 
       post("login/twoFactorAuth", params)
-    end
-
-    def inspect
-      "#<#{self.class.name} @subdomain=#{@subdomain} connection=#{@connection}>"
     end
   end
 end

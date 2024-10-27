@@ -29,8 +29,6 @@ module Flockbot
         response["success"]
       end
 
-      private
-
       def inspect
         excluded_vars = [:@session]
         instance_vars = instance_variables.reject { |var| excluded_vars.include?(var) }
