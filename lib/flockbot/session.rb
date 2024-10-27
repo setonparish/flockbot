@@ -60,7 +60,10 @@ module Flockbot
     end
 
     def authenticate_with_password(password)
-      # set first factor as email
+      # Set first factor as email
+      #
+      # Unfortunately, this will also trigger a one time code to be sent to the user
+      # I have been unable to avoid this unwanted side effect.
       params = {
         firstFactor: @email,
         initialLoad: false,
@@ -68,7 +71,7 @@ module Flockbot
       }
       post("login/twoFactorAuth", params)
 
-      # login with password
+      # Login with password
       params = {
         firstFactor: @email,
         initialLoad: false,
@@ -81,11 +84,15 @@ module Flockbot
       params = {
         firstFactor: @email,
         firstCode: code,
-        initialLoad: false
+        initialLoad: false,
+        requestAuthCode: false
       }
 
-      # this attempt will fail, but it will set the session
-      # without triggering an additional code being sent
+      # This first attempt will fail and unfortunately trigger a new code to be
+      # sent to the user, but it sets the flocknote server session correctly for
+      # the next request to do the right thing.
+      #
+      # I have been unable to avoid this unwanted side effect.
       post("login/twoFactorAuth", params)
 
       post("login/twoFactorAuth", params)
