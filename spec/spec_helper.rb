@@ -6,6 +6,22 @@ require "pry"
 
 Dotenv.load(".env.test", ".env.test.local", ".env")
 
+sanitize_vcr_value = lambda do |value|
+  next value unless value.is_a?(String)
+
+  value
+    .gsub(/(Flocknote=)[^;,\s]+/, '\1[REDACTED-FLOCKNOTE-COOKIE]')
+    .gsub(/(Flocknote-Login-\d+=)[^;,\s]+/, '\1[REDACTED-FLOCKNOTE-LOGIN-COOKIE]')
+end
+
+sanitize_vcr_headers = lambda do |headers|
+  next unless headers
+
+  headers.each do |key, values|
+    headers[key] = Array(values).map { |value| sanitize_vcr_value.call(value) }
+  end
+end
+
 VCR.configure do |c|
   c.cassette_library_dir = "spec/vcr"
   c.hook_into :faraday
@@ -71,6 +87,19 @@ VCR.configure do |c|
         match = flocknote_login_session.match(/Flocknote-Login-[1-9]+=([^;]+);?/)
         match[1] if match
       end
+    end
+  end
+
+  c.before_record do |interaction|
+    sanitize_vcr_headers.call(interaction.request.headers)
+    sanitize_vcr_headers.call(interaction.response.headers)
+
+    if interaction.request.body.is_a?(String)
+      interaction.request.body = sanitize_vcr_value.call(interaction.request.body)
+    end
+
+    if interaction.response.body.is_a?(String)
+      interaction.response.body = sanitize_vcr_value.call(interaction.response.body)
     end
   end
 end
